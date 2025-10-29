@@ -63,9 +63,12 @@ int main(){
 
       } else if (selection == 2) {
         std::cout << "ALLA SPELARE:" << std::endl;
+        // for(Player p : players) {
         for (const auto& p : players) {
           std::cout << "Namn: " << p.name << ", Ålder: " << p.age << std::endl;
         }
+      } else if (selection == 3) {
+        break;
       }
     }
 
