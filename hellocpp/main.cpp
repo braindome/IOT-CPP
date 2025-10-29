@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
+#include "loops.h"
 // #include <stdio.h>
 // #include <string.h>
 
@@ -27,18 +29,55 @@ public:
   int age;
 };
 
-int main(){
-    // std::string namn;
-    // namn = "Stefan";
-    // namn = namn + " Holmberg";
+void ImmediateIfDemo() {
+  int year = 20;
+  int price;
+  // if (year > 18) {
+  //   price = 30;
+  // }else{
+  //   price = 20;
+  // }
 
-    // std::cout << "Hej " << namn << std::endl;
+  price = year > 18 ? 30 : 20; // Shortened form of the above
 
-    // char namn[256];
-    // strcpy(namn, "Stefan");
-    // strcat(namn, " Holmberg");
-    // printf("Hej %s\n", namn);
-    // return 0;
+}
+
+void BetterInput() {
+	std::string temp;
+	std::string name;
+	
+	int age;
+	std::cout << "Namn:";
+	getline(std::cin, name);
+	std::cout << "Age:";
+	getline(std::cin, temp);
+	std::stringstream(temp) >> age;
+
+	std::cout << "Hej " << name << " du är ju " << age << " år";
+}
+
+
+void InputDemo() {
+  int age;
+  std::cout << "Skriv in din ålder" << std::endl;
+  std::cin >> age;
+  std::cout << "Jaha du är " << age << " år gammal" << std::endl;
+}
+
+void StringInputDemo() {
+  std::cout << "Vad heter du?" << std::endl;
+  std::string name; // cin skapar problem när man matar in namn med mellanslag tex Per Erik
+  // std::cin >> name; // då kör man getline
+  std::getline(std::cin, name);
+  std::cout << "Hej " << name << "! Trevligt att träffas" << std::endl;
+}
+
+void ChainedStrings() {
+  int n = 42;
+  std::cout << "The definitive answer is " << n << std::endl;
+}
+
+void LoopThruArr() {
     std::vector<Player> players; // Vektor = abstraction över dynamiska arrayer
     Player foppa;
     foppa.name = "Foppa";
@@ -71,10 +110,28 @@ int main(){
         break;
       }
     }
+}
+
+int main(){
+    // std::string namn;
+    // namn = "Stefan";
+    // namn = namn + " Holmberg";
+
+    // std::cout << "Hej " << namn << std::endl;
+
+    // char namn[256];
+    // strcpy(namn, "Stefan");
+    // strcat(namn, " Holmberg");
+    // printf("Hej %s\n", namn);
+    // return 0;
+
 
     // int arr[]{21,9,56,99,202};
     // // C = indexbaserade loopar
     // for(int index = 0; index < 5; index++) {
     //   std::cout << arr[index] << std::endl;
     // }
+
+    // ChainedStrings();
+    IfElseDemo();
 }
