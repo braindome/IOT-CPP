@@ -1,8 +1,64 @@
+#include <cctype>
 #include <iostream>
+#include <ostream>
 #include <string>
-#include <cfloat>
-#include <ctime>
+#include <sstream>
 using namespace std;
+
+void if_7() {
+  int cash;
+  bool discount;
+  char discountInput;
+  cout << "How much money do you have?" << endl;
+  cin >> cash;
+  cout << "Do you have a discount? y/n";
+  cin >> discountInput;
+  if (discountInput == 'y') {
+    discount = true;
+  } else discount = false;
+  if (cash >= 15 && cash <= 25) {
+    if (!discount) {
+      cout << "You can afford a small hamburger" << endl;
+    } else {
+      cout << "You can afford a small hamburger and fries" << endl;
+    }
+  } else if (cash > 25 && cash <= 50) {
+    if (!discount) {
+      cout << "You can afford a large hamburger" << endl;
+    } else {
+      cout << "You can afford a large hamburger and fries" << endl;
+    }
+  }
+  if (cash > 60 || (cash > 50 && cash < 60 && discount)) {
+    cout << "You can afford a meal with drink" << endl;
+  }
+}
+
+void if_6() {
+  cout << "Which country do you live in?" << endl;
+  string country;
+  getline(cin, country);
+  if (country == "Sweden" || country == "Denmark" || country == "Norway") {
+    cout << "You're in Scandinavia";
+  } else {
+    cout << "You don't live in Scandinavia";
+  }
+  
+}
+
+void if_5() {
+  char cat;
+  cout << "Choose category:" << endl << "A. Adult" << endl << "R. Retired" << endl << "S. Student" << endl;
+  cin >> cat;
+  cat = toupper(cat);
+  if(cat == 'A') {
+    cout << "Ticket price: 30 SEK";
+  } else if(cat == 'R' || cat == 'S') {
+    cout << "Ticket price: 20 SEK";
+  } else {
+    cout << "Wrong category";
+  }
+}
 
 void if_4() {
   int age;
