@@ -1,3 +1,4 @@
+#include <cctype>
 #include <cstdio>
 #include <iostream>
 #include <string>
@@ -45,26 +46,48 @@ void string_2() {
 
 
 // 3. STRING #3
-
 // Enter a text into a string ”name”.
 // Write code to modify the string so forname and lastname starts with capital letters. 
 // Enter a name:stefan holmberg
 // Result. "Stefan Holmberg"
 // Enter a name:leif stefan holmberg
 // Result. "Leif Stefan Holmberg"
-
 // How? Will keeping track of space help?
 
-
-
+void string_3() {
+  string name;
+  int count = 0;
+  cout << "Enter name:" << endl;
+  getline(cin, name);
+  name[0] = toupper(name[0]);
+  for (int i = 0; i < name.length(); i++) {
+    if (name[i] == ' ') {
+      name[i+1] = toupper(name[i+1]);
+    }
+  }
+  cout << name << endl;
+}
 
 // 4. STRING #4
-
 // Enter a text into a string ”change”.
 // Replace all spaces with ’*.. Then calculate  how many ’*’ there are in the string
 // Enter a string:hi my name is stefan
 // Result:hi*my*name*is*stefan
-// There are 4 occurances of *
+// There are 4 occurrences of *
+void string_4() {
+  string change;
+  int count = 0;
+  cout << "Enter string:" << endl;
+  getline(cin, change);
+  for (int i = 0; i < change.length(); i++) {
+    if (change[i] == ' ') {
+      change[i] = '*';
+      count++;
+    }
+  }
+  cout << "Result: " << change << endl << "There are " << count << " occurrences of *" << endl;
+  
+}
 
 
 // 5. STRING #5
@@ -92,5 +115,5 @@ void string_2() {
 // Example of palindromes:
 
 int main() {
-  string_2();
+  string_4();
 }
