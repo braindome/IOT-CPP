@@ -89,31 +89,101 @@ void string_4() {
   
 }
 
-
 // 5. STRING #5
-
 // Enter a text into a string ”email”.
 // Program should now ”validate” that is is an valid email by using these rules 
 // - contains a ’@’
 // - after the last ’.’ it should be 2 or 3 characters
-
 // (weird rules I know meaning)
 // bla@whatever.info is not valid then but
 // bla@whatever.com is  valid )
+void string_5() {
+  string email;
+  int atCount = 0;
+  int dotPos = -1;
+  cout << "Enter your email:" << endl;
+  getline(cin, email);
+  for(int i = 0; i < email.length(); i++) {
+    if(email[i] == '@') {
+      atCount++;
+    }
+  }
+  for(int i = email.length()-1; i >= 0; i--) {
+    if(email[i] == '.') {
+      dotPos = i;
+      break;
+    }
+  }
 
+  if (atCount != 1) {
+    cout << "Invalid email: too many @'s";
+  }
+  if (dotPos == -1) {
+    cout << "Invalid email: no dot found" << endl;
+    return;
+  }
+  
+  int suffixLength = email.length() - dotPos - 1;
+  if (suffixLength == 2 || suffixLength == 3) {
+    cout << "Valid email" << endl;
+  } else {
+    cout << "Invalid email: suffix must be 2 or 3 characters" << endl;
+  }
+
+}
 
 
 // 6. STRING #6
-
 // Enter a text into a string ”words”.   "hello my name is stefan"
 // Now calculate and print how many words text consists of (split/calc spaces etc?)
+void string_6() {
+  string words;
+  int wordCount = 0;
+  bool inWord = false;
+  cout << "Enter string:" << endl;
+  getline(cin, words);
+  for (auto &ch : words) {
+    if (ch != ' ') {
+      if (!inWord) {
+        wordCount++;
+        inWord = true;
+      }
+    } else {
+      inWord = false;
+    }
+  }
+  cout << "Number of words: " << wordCount << endl;
+}
 
 // 7. STRING #7
-
 // Enter a text into a string ”thetext”.
-// Now the program should verify whether it is an palindrome it not.  Meaning is the word the same if you read it backwards? Spaces should not count and capital/small letters doesn’t matter
-// Example of palindromes:
+// Now the program should verify whether it is an palindrome it not.  
+// Meaning is the word the same if you read it backwards? Spaces should not count and capital/small letters doesn’t matter
+void string_7() {
+  string text;
+  string formattedText;
+  string formattedTextReversed;
+  cout << "Enter string:" << endl;
+  getline(cin, text);
+
+  for(auto &ch : text) {
+    if(ch != ' ') {
+      formattedText += tolower(ch);
+    }
+  }
+  cout << "Formatted text: " << formattedText << endl;
+
+  for(int i = formattedText.length() -1; i >= 0; i--) {
+    formattedTextReversed += formattedText[i];
+  }
+
+  if (formattedText == formattedTextReversed) {
+    cout << "It's a palindrome!" << endl;
+  } else {
+    cout << "Not a palindrome :(" << endl;
+  }
+}
 
 int main() {
-  string_4();
+  string_7();
 }
