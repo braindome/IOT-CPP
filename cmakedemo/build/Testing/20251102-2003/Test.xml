@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20251102-2003-Experimental"
+	Name="archlinux"
+	Generator="ctest-4.1.2"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="15.2.1"
+	OSName="Linux"
+	Hostname="archlinux"
+	OSRelease="6.17.5-arch1-1"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Thu, 23 Oct 2025 18:49:03 +0000"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="25"
+	ModelID="33"
+	ModelName="AMD Ryzen 9 5900XT 16-Core Processor"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="32"
+	NumberOfPhysicalCPU="16"
+	TotalVirtualMemory="4095"
+	TotalPhysicalMemory="64211"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="4623.76"
+	>
+	<Testing>
+		<StartDateTime>Nov 02 21:03 CET</StartDateTime>
+		<StartTestTime>1762113813</StartTestTime>
+		<TestList/>
+		<EndDateTime>Nov 02 21:03 CET</EndDateTime>
+		<EndTestTime>1762113813</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

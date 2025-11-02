@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/braindome/ws/cmakedemo/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/cmakedemo.dir/main.cpp.o -c /home/braindome/ws/cmakedemo/main.cpp",
+  "file": "/home/braindome/ws/cmakedemo/main.cpp",
+  "output": "CMakeFiles/cmakedemo.dir/main.cpp.o"
+}
+]
